@@ -20,6 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get("dataapi" , [dummyAPI::class,'getDatapi']);
 
-Route::get("Listdataapi" , [DeviceController::class,'listoddata']);
+Route::post("Listadd" , [DeviceController::class,'listdataadd']);
+Route::put("Listupdate" , [DeviceController::class,'listdataupdate']);
+Route::delete("Listdelete/{id}" , [DeviceController::class,'listdatadelete']);
+Route::get("Listsearch/{name}" , [DeviceController::class,'listdatasearch']);
+Route::post("Listvalidate" , [DeviceController::class,'listdatavalidate']);
