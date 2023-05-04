@@ -6,6 +6,7 @@ use App\Http\Controllers\dummyAPI;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\MemberApiController;
 use App\Http\Controllers\SacUserController;
+use App\Http\Controllers\FileLoadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,4 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
 // user sactum
 
 Route::post("saclogin",[SacUserController::class,'index']);
+Route::post("fileupload" , [FileLoadController::class,'upload']);
